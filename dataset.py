@@ -12,7 +12,7 @@ def trainloader(batch_size = 64):
     ])
     
     trainset = torchvision.datasets.CIFAR10(root='./', train=True,
-                                            download=False, transform=transform_train)
+                                            download=True, transform=transform_train)
     
     return  torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
 
@@ -24,6 +24,6 @@ def testloader(batch_size = 64):
     ])
     
     testset = torchvision.datasets.CIFAR10(root='./', train=False,
-                                           download=False, transform=transform_test)
+                                           download=True, transform=transform_test)
     
     return torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False)
