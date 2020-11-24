@@ -247,7 +247,7 @@ class PrunningFineTuner_CNN:
         return Acc, Layers_Prunned
         
 
-"""
+
 model = CNN().cuda()
 fine_tuner = PrunningFineTuner_CNN(model)
 
@@ -259,7 +259,7 @@ opt = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 fine_tuner.train(optimizer = opt, epoches = 15)
 
 torch.save(model, "model")
-"""
+
 
 model = torch.load("model").cuda()
 fine_tuner = PrunningFineTuner_CNN(model)
